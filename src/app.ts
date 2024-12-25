@@ -5,7 +5,7 @@ import bookRoutes from './routes/book.routes';
 const app = express();
 app.use(express.json());
 
-app.use(bookRoutes);
+app.use('/api', bookRoutes);
 
 mongoose
     .connect('mongodb+srv://naksh:naksh@cluster0.tcatx.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0')
