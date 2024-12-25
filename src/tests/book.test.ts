@@ -4,9 +4,9 @@ import app from '../app';
 describe('Library Management System - Add Books', () => {
     it('should add a new book to the library', async () => {
         const response = await request(app)
-            .post('/books')
+            .post('/api/books')
             .send({
-                isbn: '12345',
+                isbn: '12345678900',
                 title: 'The Great Gatsby',
                 author: 'F. Scott Fitzgerald',
                 publicationYear: 1925,
@@ -18,14 +18,14 @@ describe('Library Management System - Add Books', () => {
     });
 
     it('should not allow adding a book with a duplicate ISBN', async () => {
-        await request(app).post('/books').send({
-            isbn: '12345',
+        await request(app).post('/api/books').send({
+            isbn: '1234567890',
             title: 'The Great Gatsby',
             author: 'F. Scott Fitzgerald',
             publicationYear: 1925,
         });
 
-        const response = await request(app).post('/books').send({
+        const response = await request(app).post('/api/books').send({
             isbn: '12345',
             title: 'Another Book',
             author: 'Another Author',
@@ -38,3 +38,5 @@ describe('Library Management System - Add Books', () => {
         });
     });
 });
+
+
