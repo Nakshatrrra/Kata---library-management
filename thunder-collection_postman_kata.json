@@ -1,0 +1,114 @@
+{
+    "info": {
+        "_postman_id": "f513b9be-fe45-45ca-a5b5-2259c38ae230",
+        "name": "kata",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+        "description": ""
+    },
+    "item": [
+        {
+            "name": "book",
+            "item": [
+                {
+                    "name": "addbooks",
+                    "request": {
+                        "method": "POST",
+                        "url": {
+                            "raw": "http://localhost:5000/api/books",
+                            "path": [
+                                "api",
+                                "books"
+                            ],
+                            "protocol": "http",
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "5000"
+                        },
+                        "body": {
+                            "mode": "raw",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            },
+                            "raw": "{\r\n  \"isbn\": \"978-3-16-148410-1\",\r\n  \"title\": \"The Great Gatsby 2\",\r\n  \"author\": \"F. Scott Fitzgerald\",\r\n  \"publicationYear\": 1925\r\n}\r\n"
+                        }
+                    }
+                },
+                {
+                    "name": "borrow",
+                    "request": {
+                        "method": "POST",
+                        "url": {
+                            "raw": "http://localhost:5000/api/borrow",
+                            "path": [
+                                "api",
+                                "borrow"
+                            ],
+                            "protocol": "http",
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "5000"
+                        },
+                        "body": {
+                            "mode": "raw",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            },
+                            "raw": "{\r\n  \"isbn\": \"12345\"\r\n}\r\n"
+                        }
+                    }
+                },
+                {
+                    "name": "return",
+                    "request": {
+                        "method": "POST",
+                        "url": {
+                            "raw": "http://localhost:5000/api/return",
+                            "path": [
+                                "api",
+                                "return"
+                            ],
+                            "protocol": "http",
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "5000"
+                        },
+                        "body": {
+                            "mode": "raw",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            },
+                            "raw": "{\r\n  \"isbn\": \"978-3-16-148410-0\"\r\n}\r\n"
+                        }
+                    }
+                },
+                {
+                    "name": "delete",
+                    "request": {
+                        "method": "GET",
+                        "url": {
+                            "raw": "http://localhost:5000/api/available",
+                            "path": [
+                                "api",
+                                "available"
+                            ],
+                            "protocol": "http",
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "5000"
+                        }
+                    }
+                }
+            ]
+        }
+    ]
+}
